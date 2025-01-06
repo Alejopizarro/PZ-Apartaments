@@ -1,0 +1,97 @@
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 20px auto 20px;
+  width: 75%;
+  gap: 1rem;
+  padding: 2rem;
+  height: 90vh;
+}
+
+img {
+  width: 100%; /* Por defecto, ocupa el 40% del ancho del contenedor */
+  max-height: 40vh; /* Mantiene la proporción de la imagen */
+  border-radius: 2rem;
+  object-fit: cover; /* Hace que la imagen se ajuste sin distorsión */
+  transition: width 0.3s ease; /* Transición suave en el ancho */
+}
+
+.contentRow {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sectionGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-around;
+}
+
+section ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  list-style: none;
+}
+
+section li {
+  background-color: var(--transparent);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-weight: 700;
+}
+
+.evenSection {
+  background-color: var(--transparent);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 300ms;
+  border-radius: 0.5rem;
+  gap: 1rem;
+}
+
+.card:hover {
+  box-shadow: 0 0 30px 0 rgba(211, 12, 12, 0.683);
+}
+
+.card:not(:hover) {
+  opacity: 0.7;
+  transform: scale(0.85);
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.1);
+}
+
+.verticalContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.verticalContainer li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: start;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.verticalContainer li:nth-child(even) {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: end;
+  align-items: center;
+  gap: 1rem;
+}

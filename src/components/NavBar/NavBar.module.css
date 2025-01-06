@@ -1,0 +1,37 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  z-index: 1000;
+}
+
+nav.scrolled {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+ul {
+  display: flex;
+  gap: 5rem;
+  list-style: none;
+  font-weight: 600;
+}
+
+li:hover {
+  color: var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+  .navBarContainer ul {
+    display: none; /* Oculta la lista */
+  }
+}
