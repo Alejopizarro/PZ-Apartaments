@@ -5,29 +5,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-@media (max-width: 768px) {
-  body {
-    font-size: 14px; /* Ajusta el tamaño de la fuente en pantallas más pequeñas */
-  }
-
-  section {
-    padding: 1rem; /* Reduce el padding en pantallas pequeñas */
-  }
-
-  h1 {
-    font-size: 5vw; /* Ajusta el tamaño de los encabezados */
-  }
-
-  h2 {
-    font-size: 4vw;
-  }
-
-  h3 {
-    font-size: 3.5vw;
-  }
-
-  button {
-    padding: 0.8rem; /* Ajusta el tamaño de los botones */
-  }
-}

@@ -5,18 +5,18 @@ import styles from "../pages/Home/Home.module.css";
 
 export const Differential = () => {
   return (
-    <div>
-      <h3>🎉 ¿Por qué elegirnos?</h3>
+    <div className={styles.verticalFather}>
+      <h3>¿Por qué elegirnos?</h3>
       <ul className={styles.verticalContainer}>
         <li>
-          <PeopleIcon font-size="5em" />
+          <PeopleIcon font-size="10em" />
           <div className={styles.contentContainer}>
             <h4>Trato Personalizado</h4>
             <p>Entendemos que cada propietario es único.</p>
           </div>
         </li>
         <li>
-          <BarsIcon font-size="5em" />
+          <BarsIcon font-size="10em" />
           <div className={styles.contentContainer}>
             <h4>Máxima Rentabilidad</h4>
             <p>
@@ -26,7 +26,7 @@ export const Differential = () => {
           </div>
         </li>
         <li>
-          <DolarIcon font-size="5em" />
+          <DolarIcon font-size="10em" />
           <div className={styles.contentContainer}>
             <h4>Cobros Asegurados</h4>
             <p>

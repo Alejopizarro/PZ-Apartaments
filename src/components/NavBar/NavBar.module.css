@@ -25,13 +25,9 @@ ul {
   font-weight: 600;
 }
 
-li:hover {
-  color: var(--primary-color);
-  box-shadow: var(--shadow);
-}
-
 @media (max-width: 768px) {
-  .navBarContainer ul {
-    display: none; /* Oculta la lista */
+  nav {
+    justify-content: space-between;
+    width: 90%;
   }
 }

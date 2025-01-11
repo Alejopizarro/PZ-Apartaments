@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import HouseIcon from "../../assets/HouseIcon";
+import logo from "../../assets/logo.png";
 import styles from "./NavBar.module.css";
+import WhatsAppIcon from "../../assets/WhatsAppIcon";
 
 export const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -16,13 +17,11 @@ export const NavBar = () => {
   }, []);
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
-      <HouseIcon font-size="3em" />
+      <img src={logo} style={{ width: "3em" }} alt="logo-pz-apartments" />
       <div className={styles.navBarContainer}>
-        <ul>
-          <li>Quienes Somos</li>
-          <li>Servicios</li>
-          <li>Contacto</li>
-        </ul>
+        <button>
+          <WhatsAppIcon />
+        </button>
       </div>
     </nav>
   );

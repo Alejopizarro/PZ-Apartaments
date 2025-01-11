@@ -6,17 +6,17 @@
   justify-content: space-evenly;
   margin: 20px auto 20px;
   width: 75%;
-  gap: 1rem;
   padding: 2rem;
-  height: 90vh;
+  /* height: 90vh; */
 }
 
-img {
+main img {
   width: 100%; /* Por defecto, ocupa el 40% del ancho del contenedor */
   max-height: 40vh; /* Mantiene la proporción de la imagen */
   border-radius: 2rem;
   object-fit: cover; /* Hace que la imagen se ajuste sin distorsión */
   transition: width 0.3s ease; /* Transición suave en el ancho */
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3); /* Desplazamiento solo abajo */
 }
 
 .contentRow {
@@ -44,47 +44,85 @@ section ul {
 }
 
 section li {
-  background-color: var(--transparent);
+  /* background-color: var(--transparent); */
   border-radius: 0.5rem;
   padding: 1rem;
   font-weight: 700;
 }
 
 .evenSection {
-  background-color: var(--transparent);
+  min-height: 50vh;
+  margin: 0;
+  background: var(--transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 0.85;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  gap: 1rem;
+}
+
+.evenSection h3 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+.evenSection p {
+  font-size: large;
+  font-weight: 500;
+}
+
+.evenSection span {
+  font-size: x-large;
+  font-weight: 700;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 300ms;
+  transition: all 500ms;
   border-radius: 0.5rem;
   gap: 1rem;
+  padding: 1rem;
 }
 
 .card:hover {
-  box-shadow: 0 0 30px 0 rgba(211, 12, 12, 0.683);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card:not(:hover) {
   opacity: 0.7;
   transform: scale(0.85);
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.1);
+}
+
+.verticalFather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .verticalContainer {
   display: flex;
   flex-direction: column;
+  width: 75%;
+  padding: 2rem;
 }
 
 .verticalContainer li {
+  background-color: var(--transparent);
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   text-align: start;
-  gap: 1rem;
+  gap: 2rem;
   padding: 1rem;
 }
 
@@ -94,4 +132,215 @@ section li {
   text-align: end;
   align-items: center;
   gap: 1rem;
+  transition: all 500ms;
+}
+
+.verticalContainer li:hover {
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.title h1 {
+  /* background: radial-gradient(rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0)); */
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 0;
+  color: black;
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  opacity: 0.85;
+}
+
+.spanRed {
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  opacity: 0.65;
+}
+
+.spanRed:hover {
+  opacity: 1;
+  transition: all 500ms;
+}
+
+.spanRed::after {
+  opacity: 0.65;
+  transition: all 500ms;
+}
+.spanSmall {
+  color: var(--primary-color);
+  font-size: 2rem;
+  /* padding: 0.5rem; */
+  font-weight: 900;
+  opacity: 0.65;
+}
+
+.spanSmall:hover {
+  opacity: 1;
+  transition: all 500ms;
+}
+
+.spanBlack {
+  /* background: radial-gradient(rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  font-size: 2rem;
+  font-weight: 900;
+  opacity: 0.85;
+  box-shadow: var(--shadow);
+}
+
+.sloganContainer {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: all 300ms;
+  padding: 1rem;
+}
+
+.blockOne {
+  font-size: 2rem;
+  font-weight: 900;
+  background-color: black;
+  color: white;
+  padding: 0.5rem;
+  transition: all 300ms;
+  opacity: 0.9;
+}
+
+.blockTwo {
+  transition: all 300ms;
+  font-size: 4rem;
+  font-weight: 900;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem; /* Combina escala e inclinación */
+}
+
+.blockOne:hover {
+  transform: scale(1.15);
+}
+
+.blockTwo:hover {
+  transform: scale(1.15);
+}
+
+.iconsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 768px) {
+  .mainContainer {
+    flex-direction: column; /* Cambiar de fila a columna */
+    align-items: center;
+    width: 90%; /* Ajustar el ancho */
+    margin: 0;
+    padding: 0 0 32px 0;
+  }
+
+  main img {
+    width: 100%; /* Imagen ocupa todo el ancho */
+    max-height: 50vh; /* Ajustar la altura máxima */
+  }
+
+  .contentRow {
+    text-align: center; /* Centrar el contenido */
+    padding: 1rem; /* Agregar espacio alrededor */
+  }
+
+  .sectionGrid {
+    flex-direction: column; /* Cambiar disposición de fila a columna */
+    gap: 1rem; /* Ajustar el espacio */
+  }
+
+  section ul {
+    flex-direction: column; /* Cambiar lista de fila a columna */
+    gap: 0.5rem; /* Reducir espacio entre elementos */
+  }
+
+  .verticalContainer {
+    width: 100%; /* Contenedor ocupa todo el ancho */
+    padding: 1rem; /* Reducir padding */
+  }
+
+  .verticalContainer li {
+    flex-direction: column; /* Cambiar disposición a columna */
+    text-align: center; /* Centrar texto */
+    gap: 1rem; /* Ajustar espacio */
+  }
+
+  .verticalContainer li:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .title h1 {
+    font-size: 2.5rem; /* Reducir tamaño del encabezado */
+    margin: 1rem 0; /* Agregar margen alrededor */
+  }
+
+  .spanBlack {
+    font-size: 1.1rem;
+  }
+  .spanRed {
+    font-size: 2.5rem; /* Ajustar tamaño del texto */
+  }
+
+  .spanSmall {
+    font-size: 1.1rem; /* Reducir tamaño del texto */
+  }
+
+  .sloganContainer {
+    width: 100%; /* Contenedor ocupa todo el ancho */
+    padding: 1rem; /* Reducir padding */
+  }
+
+  .blockOne {
+    width: 80%;
+    font-size: 1.3rem;
+  }
+
+  .blockTwo {
+    width: 85%;
+    font-size: 2.5rem; /* Ajustar tamaño del texto */
+    padding: 0.5rem; /* Reducir padding */
+    transform: none; /* Desactivar escala en hover para móviles */
+  }
+
+  .evenSection div {
+    width: 100%; /* Contenedor ocupa todo el ancho */
+  }
+
+  h3 {
+    font-size: 1.8rem; /* Reducir tamaño del texto */
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  li {
+    font-size: 1.2rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  .evenSection p {
+    font-size: 1rem; /* Reducir tamaño del texto */
+  }
+
+  button {
+    font-size: 1rem; /* Reducir tamaño del botón */
+    padding: 0.8rem 1rem; /* Ajustar el padding */
+  }
 }
