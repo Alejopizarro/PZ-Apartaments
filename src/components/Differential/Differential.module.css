@@ -1,27 +1,15 @@
 .verticalFather {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap-reverse;
   justify-content: space-evenly;
-  /* position: relative;
-  overflow: hidden; */
+  align-items: center;
 }
-/* .verticalFather::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("../../assets/tree.jpg"); 
-  background-size: cover;
-  background-position: center;
-  opacity: 0.5; 
-  filter: blur(8px); 
-  z-index: -1; 
-} */
 
 img {
   max-height: 100vh;
+  width: auto;
+  max-width: 100%;
 }
 
 .verticalContainer {
@@ -29,17 +17,16 @@ img {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding-top: 45px;
 }
 
 .cardHorizontal {
-  width: 704px;
-  height: 144px;
+  padding: 1rem;
+  width: 100vh;
+  height: auto;
   display: flex;
   border-radius: 0.5rem;
   position: relative;
   overflow: hidden;
-  padding: 20px;
   transition: all 500ms;
 }
 
@@ -51,30 +38,14 @@ img {
   right: 0;
   bottom: 0;
   background: conic-gradient(
-    at center top,
-    rgb(17, 24, 39),
-    rgb(243, 244, 246),
-    rgb(17, 24, 39)
+    at left bottom,
+    rgb(229, 231, 235),
+    rgb(156, 163, 175),
+    rgb(75, 85, 99)
   );
-  border-radius: 0.5rem; /* Bordes redondeados */
-  filter: blur(120px); /* Desenfoque */
-  z-index: 0; /* Para que esté detrás del contenido */
-}
-
-.cardHorizontal::after {
-  content: "";
-  position: absolute;
-  top: -2px; /* Ajusta para que el borde se vea */
-  left: -2px; /* Ajusta para que el borde se vea */
-  right: -2px; /* Ajusta para que el borde se vea */
-  bottom: -2px; /* Ajusta para que el borde se vea */
-  border-radius: 0.5rem; /* Mismo border-radius que el contenedor */
-  background: linear-gradient(to bottom left, blue, violet); /* Gradiente */
-  z-index: -1; /* Lo enviamos al fondo */
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); /* Máscara para mostrar solo los bordes */
-  -webkit-mask-composite: xor; /* Combinación de máscaras */
-  mask-composite: exclude; /* Excluye el contenido para mostrar solo los bordes */
-  padding: 3px; /* Grosor del borde */
+  border-radius: 0.5rem;
+  filter: blur(90px);
+  z-index: 0;
 }
 
 .cardHorizontal:hover {
@@ -98,7 +69,7 @@ img {
   justify-content: space-evenly;
   align-items: flex-start;
   width: 100%;
-  height: 144px;
+  height: auto;
   z-index: 1;
 }
 
@@ -116,4 +87,76 @@ h4,
 p,
 span {
   opacity: 0.9;
+}
+
+.expandedCard {
+  position: fixed;
+  top: 50%;
+  left: 3%;
+  transform: translate(-50%, -50%);
+  width: 94%;
+  /* max-width: 800px; */
+  height: auto;
+  max-height: 90vh;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.expandedContent {
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .verticalFather {
+    padding: 1rem; /* Reducir el padding en móviles */
+  }
+
+  img {
+    max-height: 50vh; /* Reducir el tamaño de la imagen en móviles */
+  }
+
+  .verticalContainer {
+    padding-top: 0px; /* Reducir el padding en móviles */
+    gap: 1rem; /* Reducir el espacio entre tarjetas */
+  }
+
+  .cardHorizontal {
+    padding: 0.5rem; /* Reducir el padding en móviles */
+  }
+
+  .contentContainer {
+    padding-left: 10px; /* Reducir el padding en móviles */
+  }
+
+  .expandedCard {
+    padding: 1rem; /* Reducir el padding en móviles */
+  }
+}
+
+/* Media Queries para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+  .cardHorizontal {
+    width: 100%; /* Ancho completo en móviles */
+  }
+
+  .contentContainer h4 {
+    font-size: 1.2rem; /* Reducir el tamaño de la fuente en móviles */
+  }
+
+  .contentContainer p {
+    font-size: 0.9rem; /* Reducir el tamaño de la fuente en móviles */
+  }
+
+  .expandedCard {
+    padding: 0.5rem; /* Reducir el padding en móviles */
+  }
 }

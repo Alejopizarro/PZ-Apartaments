@@ -35,12 +35,12 @@ export const Home = () => {
         </div>
         <img className={styles.homeImage} src={hapiness} alt="homepage" />
       </main>
-      <section>
-        <Services />
-      </section>
       <section className={styles.evenSection}>
         <AboutUs />
         <button onClick={scrollToContact}>Quiero saber más</button>
+      </section>
+      <section>
+        <Services />
       </section>
       <section>
         <Differential />
