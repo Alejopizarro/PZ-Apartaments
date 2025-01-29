@@ -10,7 +10,7 @@
   /* height: 90vh; */
 }
 
-main img {
+.homeImage {
   width: 100%; /* Por defecto, ocupa el 40% del ancho del contenedor */
   max-height: 40vh; /* Mantiene la proporción de la imagen */
   border-radius: 2rem;
@@ -34,20 +34,6 @@ main img {
   align-items: center;
   gap: 1rem;
   justify-content: space-around;
-}
-
-section ul {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  list-style: none;
-}
-
-section li {
-  /* background-color: var(--transparent); */
-  border-radius: 0.5rem;
-  padding: 1rem;
-  font-weight: 700;
 }
 
 .evenSection {
@@ -83,60 +69,82 @@ section li {
   font-weight: 700;
 }
 
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en pantallas pequeñas */
+}
+
 .card {
+  width: 100%; /* Ocupa el 100% del ancho en móviles */
+  max-width: 304px; /* Ancho máximo para pantallas más grandes */
+  height: auto; /* Altura automática para adaptarse al contenido */
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 500ms;
   border-radius: 0.5rem;
-  gap: 1rem;
+  transition: all 500ms;
   padding: 1rem;
+  margin-bottom: 1rem; /* Espacio entre tarjetas en móviles */
 }
 
 .card:hover {
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.15);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0.85;
 }
 
-.card:not(:hover) {
-  opacity: 0.7;
-  transform: scale(0.85);
-}
-
-.verticalFather {
+.cardHeader {
+  width: 100%;
+  min-height: 50%;
+  max-width: 420px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-.verticalContainer {
-  display: flex;
-  flex-direction: column;
-  width: 75%;
-  padding: 2rem;
-}
-
-.verticalContainer li {
-  background-color: var(--transparent);
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: start;
-  gap: 2rem;
+.cardContent {
   padding: 1rem;
+  text-align: center; /* Centramos el texto */
 }
 
-.verticalContainer li:nth-child(even) {
-  display: flex;
-  flex-direction: row-reverse;
-  text-align: end;
-  align-items: center;
-  gap: 1rem;
-  transition: all 500ms;
+.cardContent p {
+  background-color: var(--transparent);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
-.verticalContainer li:hover {
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+/* Media Queries para ajustes en pantallas pequeñas */
+@media (max-width: 768px) {
+  .cardContainer {
+    flex-direction: column; /* Apila las tarjetas verticalmente */
+    align-items: center; /* Centra las tarjetas en móviles */
+  }
+
+  .card {
+    width: 90%; /* Ocupa el 90% del ancho en móviles */
+    margin-bottom: 1.5rem; /* Más espacio entre tarjetas */
+  }
+
+  .cardHeader {
+    min-height: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%; /* Ocupa el 100% del ancho en pantallas muy pequeñas */
+  }
+
+  .cardContent {
+    padding: 0.5rem; /* Reducimos el padding en pantallas muy pequeñas */
+  }
+}
+
+.card:hover {
+  transform: scale(0.85);
 }
 
 .title {
@@ -245,7 +253,7 @@ section li {
     padding: 0 0 32px 0;
   }
 
-  main img {
+  .homeImage {
     width: 100%; /* Imagen ocupa todo el ancho */
     max-height: 50vh; /* Ajustar la altura máxima */
   }

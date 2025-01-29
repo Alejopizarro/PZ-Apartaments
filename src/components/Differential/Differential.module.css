@@ -1,0 +1,119 @@
+.verticalFather {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* position: relative;
+  overflow: hidden; */
+}
+/* .verticalFather::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../assets/tree.jpg"); 
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; 
+  filter: blur(8px); 
+  z-index: -1; 
+} */
+
+img {
+  max-height: 100vh;
+}
+
+.verticalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 45px;
+}
+
+.cardHorizontal {
+  width: 704px;
+  height: 144px;
+  display: flex;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  transition: all 500ms;
+}
+
+.cardHorizontal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: conic-gradient(
+    at center top,
+    rgb(17, 24, 39),
+    rgb(243, 244, 246),
+    rgb(17, 24, 39)
+  );
+  border-radius: 0.5rem; /* Bordes redondeados */
+  filter: blur(120px); /* Desenfoque */
+  z-index: 0; /* Para que esté detrás del contenido */
+}
+
+.cardHorizontal::after {
+  content: "";
+  position: absolute;
+  top: -2px; /* Ajusta para que el borde se vea */
+  left: -2px; /* Ajusta para que el borde se vea */
+  right: -2px; /* Ajusta para que el borde se vea */
+  bottom: -2px; /* Ajusta para que el borde se vea */
+  border-radius: 0.5rem; /* Mismo border-radius que el contenedor */
+  background: linear-gradient(to bottom left, blue, violet); /* Gradiente */
+  z-index: -1; /* Lo enviamos al fondo */
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); /* Máscara para mostrar solo los bordes */
+  -webkit-mask-composite: xor; /* Combinación de máscaras */
+  mask-composite: exclude; /* Excluye el contenido para mostrar solo los bordes */
+  padding: 3px; /* Grosor del borde */
+}
+
+.cardHorizontal:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cardHeaderH {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  text-align: left;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  height: 144px;
+  z-index: 1;
+}
+
+.contentContainer p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.contentContainer h4 {
+  margin: 0;
+}
+
+h3,
+h4,
+p,
+span {
+  opacity: 0.9;
+}

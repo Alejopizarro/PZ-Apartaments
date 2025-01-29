@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { AboutUs } from "../../components/AboutUs";
 import { Contact } from "../../components/Contact";
-import { Differential } from "../../components/Differential";
+import { Differential } from "../../components/Differential/Differential";
 import { Services } from "../../components/Services";
 import styles from "./Home.module.css";
 import hapiness from "../../assets/hapiness.jpg";
@@ -33,14 +33,14 @@ export const Home = () => {
             <span className={styles.blockTwo}>¡Sin moverte de tu casa!</span>
           </div>
         </div>
-        <img src={hapiness} alt="homepage" />
+        <img className={styles.homeImage} src={hapiness} alt="homepage" />
       </main>
+      <section>
+        <Services />
+      </section>
       <section className={styles.evenSection}>
         <AboutUs />
         <button onClick={scrollToContact}>Quiero saber más</button>
-      </section>
-      <section>
-        <Services />
       </section>
       <section>
         <Differential />
