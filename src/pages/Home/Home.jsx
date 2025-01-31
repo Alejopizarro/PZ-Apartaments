@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { AboutUs } from "../../components/AboutUs";
-import { Contact } from "../../components/Contact";
+import { Contact } from "../../components/Contact/Contact";
 import { Differential } from "../../components/Differential/Differential";
 import { Services } from "../../components/Services";
 import styles from "./Home.module.css";
@@ -36,8 +36,7 @@ export const Home = () => {
         <img className={styles.homeImage} src={hapiness} alt="homepage" />
       </main>
       <section className={styles.evenSection}>
-        <AboutUs />
-        <button onClick={scrollToContact}>Quiero saber más</button>
+        <AboutUs scrollToContact={scrollToContact} />
       </section>
       <section>
         <Services />
