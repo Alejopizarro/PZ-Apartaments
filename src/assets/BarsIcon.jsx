@@ -3,8 +3,8 @@ const BarsIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
     x="0px"
     y="0px"
-    width="128"
-    height="128"
+    width="78"
+    height="78"
     viewBox="0 0 128 128"
   >
     <path

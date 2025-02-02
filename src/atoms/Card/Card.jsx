@@ -19,16 +19,18 @@ export const Card = ({
       variants={cardVariants}
       initial="hidden"
       animate="visible"
-      transition={{ delay: 0.2 }}
+      transition={{ delay: 0.1 }}
+      whileHover="hover"
+      style={{ position: "relative" }}
     >
       <div className={styles.cardHeader}>{icon}</div>
-      <div className={styles.cardContent}>
+      <motion.div className={styles.cardContent}>
         <h4>{title}</h4>
         <p>{description}</p>
         {additionalContent && (
           <div className={styles.additionalContent}>{additionalContent}</div>
         )}
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
@@ -36,4 +38,5 @@ export const Card = ({
 const cardVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
+  hover: { y: -32, zIndex: 2 },
 };

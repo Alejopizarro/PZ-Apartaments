@@ -3,53 +3,46 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 304px;
+  max-width: 33%;
   height: auto;
-  border-radius: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 2rem 2rem 0rem 0rem;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  transition: all 500ms;
   position: relative;
+  z-index: 1;
   overflow: hidden;
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--primary-color);
-  filter: blur(20px);
-  z-index: 0;
-}
-
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(20px);
+  z-index: 2;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
 }
 
 .cardHeader {
-  background-color: var(--transparent);
   width: 100%;
-  max-width: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 2rem 2rem 0rem 0rem;
   z-index: 1;
 }
 
 .cardContent {
-  padding: 1rem;
-  text-align: center;
-  border-radius: 0rem 0rem 2rem 2rem;
-  height: 100%;
-  z-index: 1;
+  background-color: var(--primary-color);
+  padding: 1rem 1rem 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
 }
 
 .cardHorizontal {
   width: 100%;
+  border-radius: 2rem;
   /* height: auto; */
   max-width: 100%;
   display: flex;
@@ -87,8 +80,6 @@
   text-align: left;
   justify-content: space-evenly;
   align-items: flex-start;
-  width: 60%;
-  height: 100%;
   z-index: 1;
 }
 
@@ -105,5 +96,8 @@
   }
   .cardHorizontal .cardContent {
     width: 100%;
+  }
+  .card {
+    max-width: 100%;
   }
 }
