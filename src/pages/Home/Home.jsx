@@ -5,12 +5,18 @@ import { Differential } from "../../components/Differential/Differential";
 import { Services } from "../../components/Services";
 import styles from "./Home.module.css";
 import hapiness from "../../assets/hapiness.jpg";
+import { motion } from "motion/react";
 
 export const Home = () => {
   const contactRef = useRef(null);
 
   const scrollToContact = () => {
     contactRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 1 } },
   };
 
   return (
@@ -33,7 +39,14 @@ export const Home = () => {
             <span className={styles.blockTwo}>¡Sin moverte de tu casa!</span>
           </div>
         </div>
-        <img className={styles.homeImage} src={hapiness} alt="homepage" />
+        <motion.img
+          className={styles.homeImage}
+          src={hapiness}
+          alt="homepage"
+          initial="hidden" // Estado inicial
+          animate="visible" // Estado final
+          variants={imageVariants} // Aplicar variantes
+        />
       </main>
       <section className={styles.evenSection}>
         <AboutUs scrollToContact={scrollToContact} />
