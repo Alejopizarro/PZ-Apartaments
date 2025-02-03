@@ -5,7 +5,6 @@ import { Differential } from "../../components/Differential/Differential";
 import { Services } from "../../components/Services";
 import styles from "./Home.module.css";
 import hapiness from "../../assets/hapiness.jpg";
-import Faq from "../../components/Faq";
 
 export const Home = () => {
   const contactRef = useRef(null);
@@ -45,7 +44,7 @@ export const Home = () => {
       <section>
         <Differential />
       </section>
-      <section>
+      <section ref={contactRef}>
         <Contact />
       </section>
     </>

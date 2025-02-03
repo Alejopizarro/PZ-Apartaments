@@ -1,5 +1,3 @@
-import MailIcon from "../../assets/MailIcon";
-import WhatsAppIcon from "../../assets/WhatsAppIcon";
 import styles from "./Contact.module.css";
 import { useForm } from "react-hook-form";
 
@@ -15,7 +13,7 @@ export const Contact = () => {
   return (
     <div className={styles.container}>
       <h3>¿Listo para empezar?</h3>
-      <p style={{ fontSize: "medium" }}>
+      <p style={{ fontSize: "small" }}>
         ¿Tienes preguntas? ¿Quieres saber más? Escríbenos y descubre cómo
         podemos ayudarte a gestionar tu propiedad en Airbnb.
       </p>
@@ -40,8 +38,8 @@ export const Contact = () => {
           />
         </div>
       </form>
-      <button style={{ width: "50%" }}>Contactanos</button>
-      <span style={{ fontSize: "medium" }}>
+      <button className={styles.buttonForm}>Contactanos</button>
+      <span style={{ fontSize: "medium", fontWeight: "bold" }}>
         Estamos a un clic de distancia.
       </span>
     </div>

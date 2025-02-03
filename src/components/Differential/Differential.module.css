@@ -28,14 +28,14 @@ span {
 
 .expandedCard {
   position: fixed;
-  top: 25%;
+  top: 23%;
   left: 15%;
   transform: translate(-50%, -50%);
   width: 75%;
   /* max-width: 800px; */
   height: auto;
   max-height: 90vh;
-  background: var(--primary-color-light);
+  background: var(--light-color);
   border-radius: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   z-index: 1000;
@@ -50,6 +50,22 @@ span {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+}
+
+.backgroundBlur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo semitransparente */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  z-index: 999; /* Asegúrate de que esté detrás de la expandedCard */
+  display: none; /* Oculto por defecto */
+}
+
+.backgroundBlur.visible {
+  display: block; /* Muestra el fondo cuando está activo */
 }
 
 @media (max-width: 768px) {
@@ -76,7 +92,9 @@ span {
   }
 
   .expandedCard {
-    padding: 1rem; /* Reducir el padding en móviles */
+    padding: 1rem;
+    top: 15%;
+    left: 9%;
   }
 }
 
@@ -96,5 +114,8 @@ span {
 
   .expandedCard {
     padding: 0.5rem; /* Reducir el padding en móviles */
+  }
+  .verticalFather {
+    padding: 1rem;
   }
 }

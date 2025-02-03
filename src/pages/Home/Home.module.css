@@ -1,3 +1,9 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .mainContainer {
   display: flex;
   flex-direction: row;
@@ -7,7 +13,7 @@
   margin: 20px auto 20px;
   width: 75%;
   padding: 2rem;
-  /* height: 90vh; */
+  gap: 0rem;
 }
 
 .homeImage {
@@ -53,12 +59,12 @@
   align-items: center;
   justify-content: space-evenly;
   gap: 3rem;
+  padding: 2rem;
 }
 
 .containerColor {
   padding: 2rem;
   display: flex;
-
   flex-direction: column;
   gap: 1rem;
   align-items: center;
@@ -246,10 +252,6 @@
     transform: none; /* Desactivar escala en hover para móviles */
   }
 
-  .evenSection div {
-    width: 100%; /* Contenedor ocupa todo el ancho */
-  }
-
   h3 {
     font-size: 1.8rem; /* Reducir tamaño del texto */
   }
@@ -276,5 +278,16 @@
   }
   .cardContainer {
     gap: 3rem;
+  }
+  .container {
+    padding: 1rem;
+    width: 90%;
+  }
+  .containerColor {
+    padding: 2rem;
+    width: 90%;
+  }
+  p {
+    margin: 8px;
   }
 }

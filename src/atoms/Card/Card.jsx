@@ -16,7 +16,7 @@ export const Card = ({
         orientation === "horizontal" ? styles.cardHorizontal : ""
       }`}
       onClick={onClick}
-      variants={cardVariants}
+      variants={cardVariants(orientation)}
       initial="hidden"
       animate="visible"
       transition={{ delay: 0.1 }}
@@ -35,8 +35,8 @@ export const Card = ({
   );
 };
 
-const cardVariants = {
+const cardVariants = (orientation) => ({
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
-  hover: { y: -32, zIndex: 2 },
-};
+  hover: orientation === "horizontal" ? {} : { y: -32, zIndex: 2 },
+});

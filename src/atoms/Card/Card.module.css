@@ -6,7 +6,6 @@
   max-width: 33%;
   height: auto;
   border-radius: 2rem 2rem 0rem 0rem;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   transition: all 500ms;
   position: relative;
   z-index: 1;
@@ -34,7 +33,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: auto;
+  height: 100%;
   box-sizing: border-box;
   overflow: hidden;
   width: 100%;
@@ -43,14 +42,12 @@
 .cardHorizontal {
   width: 100%;
   border-radius: 2rem;
-  /* height: auto; */
   max-width: 100%;
   display: flex;
-  /* padding: 1rem; */
   flex-direction: row;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .cardHorizontal::before {
@@ -81,21 +78,26 @@
   justify-content: space-evenly;
   align-items: flex-start;
   z-index: 1;
+  font-weight: 500;
 }
 
 .additionalContent {
   margin: 0.5rem;
-  color: #007bff;
   cursor: pointer;
+  font-weight: bold;
+}
+
+.additionalContent:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
   .cardHorizontal .cardHeader {
-    width: 20%;
-    min-height: 13rem;
+    display: none;
   }
   .cardHorizontal .cardContent {
     width: 100%;
+    padding: 1rem;
   }
   .card {
     max-width: 100%;
